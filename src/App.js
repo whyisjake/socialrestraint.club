@@ -1,21 +1,15 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+// import { Container, Row, Col } from 'reactstrap';
+import Nav from './components/Navbar';
+import Header from './components/Header';
 
-class App extends Component {
+export default class Example extends React.Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to the Social Restraint Club</h1>
-        </header>
-        <p className="App-intro">
-          Erika Fang, Jake Spurlock, and Roni Willet
-        </p>
+      <div>
+        <Nav />
+        <Header />
       </div>
     );
   }
 }
-
-export default App;
