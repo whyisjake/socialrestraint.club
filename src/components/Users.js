@@ -13,14 +13,14 @@ export default class Users extends React.Component {
     };
   }
   render() {
-    const users = _.chunk(_.shuffle(UserList.results), 144);
+    const users = _.chunk(_.shuffle(UserList.results), 12);
     return (
       <Container>
         <section className="p-0" id="portfolio">
           {users.map((users, i) => {
-            return (<Row className="no-gutters">
-              {users.map(user => {
-                return <User image={user.picture.large} name={`${user.name.first} ${user.name.last}`} pledge={user.registered} />
+            return (<Row className="no-gutters" key={i}>
+              {users.map((user, i) => {
+                return <User image={user.picture.large} name={`${user.name.first} ${user.name.last}`} pledge={user.registered} key={i} />
               })}
             </Row>
           )})}
