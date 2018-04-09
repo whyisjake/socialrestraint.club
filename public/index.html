@@ -34,22 +34,22 @@
   </head>
   <body>
     <script>
-      window.fbAsyncInit = function () {
-        FB.init({
-          appId: '2100059763598941',
-          xfbml: true,
-          version: 'v2.12'
-        });
-        FB.getLoginStatus(function (response) {
-          if (response.status === 'connected') {
-            console.log('Logged in.');
-          }
-          else {
-            FB.login();
-          }
-        });
-        FB.AppEvents.logPageView();
-      };
+      // window.fbAsyncInit = function () {
+      //   FB.init({
+      //     appId: '2100059763598941',
+      //     xfbml: true,
+      //     version: 'v2.12'
+      //   });
+      //   FB.getLoginStatus(function (response) {
+      //     if (response.status === 'connected') {
+      //       console.log('Logged in.');
+      //     }
+      //     else {
+      //       FB.login();
+      //     }
+      //   });
+      //   FB.AppEvents.logPageView();
+      // };
 
       (function (d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
@@ -73,6 +73,6 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    <div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div>
+    <!-- <div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div> -->
   </body>
 </html>
