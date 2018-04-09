@@ -31,10 +31,8 @@
   let checkSize = function () {
     if ($("#mainNav").css("background-color") === "rgb(255, 255, 255)") {
       $('#uscLogo').attr('src', '/img/usc-shield-name-black.png');
-      console.log('Logo should be black here...');
     } else {
       $('#uscLogo').attr('src', '/img/usc-shield-name-white.png');
-      console.log('Logo should be white here...');
     }
   }
 
@@ -58,6 +56,7 @@
     navbarCollapse();
     $('#loginButton').click(function(e){
       e.preventDefault();
+      console.log('we have a click...')
       FB.getLoginStatus(function (response) {
         if (response.status === 'connected') {
           console.log('Logged in.');
