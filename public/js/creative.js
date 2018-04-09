@@ -4,7 +4,7 @@
 
   // Smooth scrolling using jQuery easing
   $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+    if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
       if (target.length) {
@@ -37,7 +37,7 @@
   }
 
   // Collapse Navbar
-  var navbarCollapse = function() {
+  let navbarCollapse = function() {
     if ($("#mainNav").offset().top > 100) {
       $("#mainNav").addClass("navbar-shrink");
       checkSize();
@@ -47,7 +47,7 @@
     }
   };
 
-  const postMessage = function() {
+  let postMessage = function() {
     var body = 'I pledge to spend more time offline!';
     FB.api('/me/feed', 'post', { message: body }, function (response) {
       if (!response || response.error) {
@@ -72,8 +72,7 @@
         if (response.status === 'connected') {
           console.log('Logged in.');
           postMessage();
-        }
-        else {
+        } else {
           FB.login(function(response) {
             if (response.authResponse) {
               console.log('Welcome!  Fetching your information.... ');
