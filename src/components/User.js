@@ -7,7 +7,7 @@ export default class User extends React.Component {
     const time = moment(this.props.pledge, "YYYYMMDD").fromNow();
     return (
       <Col xs="4" lg="1">
-        <a className="portfolio-box" href="img/portfolio/fullsize/1.jpg">
+        <a className="portfolio-box" href={this.props.image}>
           <img className="img-fluid" src={this.props.image} alt={this.props.name} />
           <div className="portfolio-box-caption">
             <div className="portfolio-box-caption-content">

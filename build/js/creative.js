@@ -1,5 +1,6 @@
 (function($) {
-  "use strict"; // Start of use strict
+  // Start of use strict
+  let location = document.location;
 
   // Smooth scrolling using jQuery easing
   $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
@@ -30,12 +31,29 @@
   var navbarCollapse = function() {
     if ($("#mainNav").offset().top > 100) {
       $("#mainNav").addClass("navbar-shrink");
+      $('#uscLogo').attr('src', '/img/usc-shield-name-black.png');
     } else {
       $("#mainNav").removeClass("navbar-shrink");
+      $('#uscLogo').attr('src', '/img/usc-shield-name-white.png');
     }
   };
+
   // Collapse now if page is not at top
-  navbarCollapse();
+  $(document).ready(function() {
+    navbarCollapse();
+    $('#loginButton').click(function(e){
+      e.preventDefault();
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          console.log('Logged in.');
+        }
+        else {
+          FB.login();
+        }
+      });
+    })
+  });
+
   // Collapse the navbar when page is scrolled
   $(window).scroll(navbarCollapse);
 
