@@ -27,19 +27,34 @@
     offset: 57
   });
 
+  //Function to the css rule
+  let checkSize = function () {
+    if ($("#mainNav").css("background-color") === "rgb(255, 255, 255)") {
+      $('#uscLogo').attr('src', '/img/usc-shield-name-black.png');
+      console.log('Logo should be black here...');
+    } else {
+      $('#uscLogo').attr('src', '/img/usc-shield-name-white.png');
+      console.log('Logo should be white here...');
+    }
+  }
+
   // Collapse Navbar
   var navbarCollapse = function() {
     if ($("#mainNav").offset().top > 100) {
       $("#mainNav").addClass("navbar-shrink");
-      $('#uscLogo').attr('src', '/img/usc-shield-name-black.png');
+      checkSize();
     } else {
       $("#mainNav").removeClass("navbar-shrink");
-      $('#uscLogo').attr('src', '/img/usc-shield-name-white.png');
+      checkSize();
     }
   };
 
   // Collapse now if page is not at top
   $(document).ready(function() {
+    // run test on initial page load
+    checkSize();
+    // run test on resize of the window
+    $(window).resize(checkSize);
     navbarCollapse();
     $('#loginButton').click(function(e){
       e.preventDefault();
