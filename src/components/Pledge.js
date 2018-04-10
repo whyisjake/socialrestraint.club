@@ -61,6 +61,12 @@ export default class Pledge extends React.Component {
     }.bind(this));
   }
 
+  login() {
+    window.FB.login(function (response) {
+      this.setState({ user: response });
+    }.bind(this));
+  }
+
   // This is called with the results from from window.FB.getLoginStatus().
   statusChangeCallback(response) {
     this.setState({response: response});
@@ -75,7 +81,7 @@ export default class Pledge extends React.Component {
       this.testAPI();
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
-      console.log('Please log into this app.');
+      this.login();
     } else {
       // The person is not logged into Facebook, so we're not sure if
       // they are logged into this app or not.
