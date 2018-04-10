@@ -9,7 +9,7 @@ export default class User extends React.Component {
   postMessage() {
     window.FB.ui({
       method: 'share',
-      link: document.location.href,
+      href: document.location.href,
       hashtag: '#socialrestraint',
       quote: `I, ${this.props.name} join others in taking back my time, calling on social media companies to be more responsible, and using social media in a positive way.`,
     }, function (response) {
