@@ -86,6 +86,7 @@ export default class Pledge extends React.Component {
       // The person is not logged into Facebook, so we're not sure if
       // they are logged into this app or not.
       console.log('Please log into Facebook.');
+      this.login();
     }
   }
 
