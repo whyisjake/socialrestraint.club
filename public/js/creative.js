@@ -47,17 +47,6 @@
     }
   };
 
-  let postMessage = function() {
-    var body = 'I pledge to spend more time offline!';
-    FB.api('/me/feed', 'post', { message: body }, function (response) {
-      if (!response || response.error) {
-        alert('Error occured');
-      } else {
-        alert('Post ID: ' + response.id);
-      }
-    });
-  }
-
   // Collapse now if page is not at top
   $(document).ready(function() {
     // run test on initial page load
@@ -65,28 +54,6 @@
     // run test on resize of the window
     $(window).resize(checkSize);
     navbarCollapse();
-    $('#loginButton').click(function(e){
-      e.preventDefault();
-      console.log('we have a click...')
-      FB.getLoginStatus(function (response) {
-        if (response.status === 'connected') {
-          console.log('Logged in.');
-          postMessage();
-        } else {
-          FB.login(function(response) {
-            if (response.authResponse) {
-              console.log('Welcome!  Fetching your information.... ');
-              FB.api('/me', function (response) {
-                console.log('Good to see you, ' + response.name + '.');
-              });
-              postMessage();
-            } else {
-              console.log('User cancelled login or did not fully authorize.');
-            }
-          });
-        }
-      });
-    })
   });
 
   // Collapse the navbar when page is scrolled

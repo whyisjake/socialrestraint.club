@@ -1,10 +1,12 @@
 import React from 'react';
 // import { Container, Row, Col } from 'reactstrap';
-import About from './components/About';
+import Pledge from './components/Pledge';
 import Nav from './components/Navbar';
 import Header from './components/Header';
 import Users from './components/Users';
+import Services from './components/Services';
 import UserList from './users.json';
+
 
 export default class SocialRestraint extends React.Component {
   render() {
@@ -12,8 +14,9 @@ export default class SocialRestraint extends React.Component {
       <div>
         <Nav />
         <Header />
-        <About />
+        <Pledge />
         <Users users={UserList} />
+        <Services />
       </div>
     );
   }
