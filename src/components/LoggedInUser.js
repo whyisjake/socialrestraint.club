@@ -20,7 +20,6 @@ export default class User extends React.Component {
   render() {
     return (
       <div>
-      { console.log(this.props) }
         {this.props.name &&
           <div className="row">
           <div className="col-2">

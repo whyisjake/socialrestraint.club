@@ -94,8 +94,7 @@ export default class Pledge extends React.Component {
 
   render() {
     return (
-      <section className="bg-primary" id="about">
-        {console.log(!!this.state.user.id)}
+      <section className="bg-primary" id="pledge">
         <div className="container">
           <div className="row">
             <div className="col-lg-8 mx-auto text-center">

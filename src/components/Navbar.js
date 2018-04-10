@@ -1,4 +1,5 @@
 import React from 'react';
+import { HashLink as Link } from 'react-router-hash-link';
 import { Navbar } from 'reactstrap';
 
 export default class bsNavbar extends React.Component {
@@ -15,16 +16,16 @@ export default class bsNavbar extends React.Component {
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <a className="nav-link js-scroll-trigger" href="#about">Take Action</a>
+                <Link className="nav-link js-scroll-trigger" to="/#pledge">Take Action</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link js-scroll-trigger" href="#services">The Facts</a>
+                <Link className="nav-link js-scroll-trigger" to="/#facts">The Facts</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link js-scroll-trigger" href="#portfolio">Pledge</a>
+                <Link className="nav-link js-scroll-trigger" to="/">Home</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link js-scroll-trigger" href="#contact">Contact</a>
+                <Link className="nav-link js-scroll-trigger" to="/privacy">Privacy Policy</Link>
               </li>
             </ul>
           </div>

@@ -13,7 +13,7 @@ export default class bsHeader extends React.Component {
             </div>
             <div className="col-lg-8 mx-auto">
               <p className="text-faded mb-5">Take the pledge to spend less time online.</p>
-              <a className="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
+              <a className="btn btn-primary btn-xl js-scroll-trigger" href="#pledge">Find Out More</a>
             </div>
           </div>
         </div>

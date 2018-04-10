@@ -1,23 +1,26 @@
 import React from 'react';
-// import { Container, Row, Col } from 'reactstrap';
-import Pledge from './components/Pledge';
+import './App.css';
+
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
+// Pages
+import Home from './Pages/Home';
+import Privacy from './Pages/Privacy';
+
+// Components
 import Nav from './components/Navbar';
 import Header from './components/Header';
-import Users from './components/Users';
-import Services from './components/Services';
-import UserList from './users.json';
 
 
-export default class SocialRestraint extends React.Component {
-  render() {
-    return (
-      <div>
-        <Nav />
-        <Header />
-        <Pledge />
-        <Users users={UserList} />
-        <Services />
-      </div>
-    );
-  }
-}
+const App = () => (
+  <Router>
+    <div>
+      <Nav />
+      <Header />
+      <Route exact path="/" component={Home} />
+      <Route path="/privacy" component={Privacy} />
+    </div>
+  </Router>
+);
+
+export default App;
