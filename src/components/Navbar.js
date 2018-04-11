@@ -16,13 +16,13 @@ export default class bsNavbar extends React.Component {
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
+                <Link className="nav-link js-scroll-trigger" to="/#mainNav">Home</Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link js-scroll-trigger" to="/#pledge">Take Action</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link js-scroll-trigger" to="/#facts">The Facts</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link js-scroll-trigger" to="/">Home</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link js-scroll-trigger" to="/privacy">Privacy Policy</Link>

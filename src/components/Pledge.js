@@ -56,7 +56,7 @@ export default class Pledge extends React.Component {
   // Here we run a very simple test of the Graph API after login is
   // successful.  See statusChangeCallback() for when this call is made.
   testAPI() {
-    window.FB.api('/me', { fields: 'first_name,last_name,email,name,picture,cover' }, function (response) {
+    window.FB.api('/me', { fields: 'first_name,last_name,email,name,picture.type(large),cover' }, function (response) {
       this.setState({ user: response });
     }.bind(this));
   }
@@ -64,11 +64,13 @@ export default class Pledge extends React.Component {
   login() {
     window.FB.login(function (response) {
       this.setState({ user: response });
+      this.testAPI();
     }.bind(this));
   }
 
   // This is called with the results from from window.FB.getLoginStatus().
-  statusChangeCallback(response) {
+  statusChangeCallback(response, login = false) {
+    console.log('Login', login);
     this.setState({response: response});
     console.log('statusChangeCallback');
     console.log(response);
@@ -81,21 +83,26 @@ export default class Pledge extends React.Component {
       this.testAPI();
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
-      this.login();
+      console.log('Need to login to the app.');
+      if (login) {
+        this.login();
+      }
     } else {
       // The person is not logged into Facebook, so we're not sure if
       // they are logged into this app or not.
       console.log('Please log into Facebook.');
-      this.login();
+      if (login) {
+        this.login();
+      }
     }
   }
 
   // This function is called when someone finishes with the Login
   // Button.  See the onlogin handler attached to it in the sample
   // code below.
-  checkLoginState() {
+  checkLoginState(login = false) {
     window.FB.getLoginStatus(function (response) {
-      this.statusChangeCallback(response);
+      this.statusChangeCallback(response, login);
     }.bind(this));
   }
 
@@ -110,8 +117,8 @@ export default class Pledge extends React.Component {
               <p className="text-faded mb-4">Join us in taking back your time, calling on social media companies to be more responsible, and using social media in a positive way.</p>
               <p className="text-faded mb-4">Join your friends in spending less time on social media?</p>
               {!this.state.user.id &&
-                <Button className="btn btn-light btn-lg js-scroll-trigger" id="loginButton" onClick={this.checkLoginState}>
-                  Take the pledge!
+                <Button className="btn btn-light btn-lg js-scroll-trigger" id="loginButton" onClick={() => this.checkLoginState(true)}>
+                  Join the Club
                 </Button>
               }
               <LoggedInUser {...this.state.user} postMessage={this.postMessage} />
