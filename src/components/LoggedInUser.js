@@ -14,7 +14,7 @@ export default class User extends React.Component {
       quote: `I, ${this.props.name}, join others in taking back my time, calling on social media companies to be more responsible, and using social media in a positive way.`,
     }, function (response) {
       console.log(response);
-      window.fbq('track', 'pledge', {response:response, props: this.props});
+      window.fbq('trackCustom', 'pledge', {response:response, props: this.props});
     });
   }
 

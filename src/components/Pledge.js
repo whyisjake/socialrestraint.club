@@ -58,7 +58,7 @@ export default class Pledge extends React.Component {
   testAPI() {
     window.FB.api('/me', { fields: 'first_name,last_name,email,name,picture.type(large),cover' }, function (response) {
       this.setState({ user: response });
-      window.fbq('track', 'test', {state: this.state});
+      window.fbq('trackCustom', 'test', {state: this.state});
     }.bind(this));
   }
 
@@ -66,7 +66,7 @@ export default class Pledge extends React.Component {
     window.FB.login(function (response) {
       this.setState({ user: response });
       this.testAPI();
-      window.fbq('track', 'login', {state: this.state});
+      window.fbq('trackCustom', 'login', {state: this.state});
     }.bind(this));
   }
 
@@ -83,7 +83,7 @@ export default class Pledge extends React.Component {
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
       this.testAPI();
-      window.fbq('track', 'connected', { state: this.state });
+      window.fbq('trackCustom', 'connected', { state: this.state });
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
       console.log('Need to login to the app.');
