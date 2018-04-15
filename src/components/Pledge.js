@@ -118,7 +118,7 @@ export default class Pledge extends React.Component {
               <h2 className="section-heading text-white">Take Back Your Time</h2>
               <hr className="light my-4" />
               <p className="text-faded mb-4">Join us in taking back your time, calling on social media companies to be more responsible, and using social media in a positive way.</p>
-              <p className="text-faded mb-4">Join your friends in spending less time on social media?</p>
+              <p className="text-faded mb-4">Don't bookend your day with social media. Spend the first and last hour of the day without your phone on social media, and see what kind of changes you will find in your life.</p>
               {!this.state.user.id &&
                 <Button className="btn btn-light btn-lg js-scroll-trigger" id="loginButton" onClick={() => this.checkLoginState(true)}>
                   Join the Club

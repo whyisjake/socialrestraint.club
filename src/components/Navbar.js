@@ -25,6 +25,9 @@ export default class bsNavbar extends React.Component {
                 <Link className="nav-link js-scroll-trigger" to="/#facts">The Facts</Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link js-scroll-trigger" to="/#media">Media</Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link js-scroll-trigger" to="/privacy">Privacy Policy</Link>
               </li>
             </ul>
