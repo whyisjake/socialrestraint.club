@@ -1,11 +1,9 @@
-import React from 'react';
-// import { Container, Row, Col } from 'reactstrap';
-import Pledge from '../components/Pledge';
-import Users from '../components/Users';
-import Services from '../components/Services';
-import Media from '../components/Media';
-import UserList from '../users.json';
-
+import React from "react";
+import Pledge from "../components/Pledge";
+import Users from "../components/Users";
+import Services from "../components/Services";
+import Media from "../components/Media";
+import UserList from "../users.json";
 
 export default class SocialRestraint extends React.Component {
   render() {
