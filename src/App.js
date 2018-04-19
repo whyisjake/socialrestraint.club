@@ -1,15 +1,14 @@
-import React from 'react';
+import React from "react";
 
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 // Pages
-import Home from './Pages/Home';
-import Privacy from './Pages/Privacy';
+import Home from "./Pages/Home";
+import Privacy from "./Pages/Privacy";
 
 // Components
-import Nav from './components/Navbar';
-import Header from './components/Header';
-
+import Nav from "./components/Navbar";
+import Header from "./components/Header";
 
 const App = () => (
   <Router>

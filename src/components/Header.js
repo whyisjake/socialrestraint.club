@@ -20,7 +20,7 @@ export default class bsHeader extends React.Component {
               </p>
               <Link
                 className="btn btn-primary btn-xl js-scroll-trigger"
-                href="#pledge"
+                to="#pledge"
               >
                 Find Out More
               </Link>

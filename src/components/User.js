@@ -1,7 +1,7 @@
-import React from 'react';
-import {Col} from 'reactstrap';
-import moment from 'moment';
-import _ from 'lodash';
+import React from "react";
+import { Col } from "reactstrap";
+import moment from "moment";
+import _ from "lodash";
 
 export default class User extends React.Component {
   render() {
@@ -11,7 +11,11 @@ export default class User extends React.Component {
     return (
       <Col xs="4" lg="1">
         <a id={number} className="portfolio-box" href={hash}>
-          <img className="img-fluid" src={this.props.image} alt={this.props.name} />
+          <img
+            className="img-fluid"
+            src={this.props.image}
+            alt={this.props.name}
+          />
           <div className="portfolio-box-caption">
             <div className="portfolio-box-caption-content">
               <div className="project-category text-faded">Pledged {time}</div>
@@ -20,6 +24,6 @@ export default class User extends React.Component {
           </div>
         </a>
       </Col>
-    )
+    );
   }
 }
