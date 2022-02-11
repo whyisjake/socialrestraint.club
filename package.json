@@ -1,11 +1,13 @@
 {
   "name": "socialrestraint.club",
+  "homepage": "http://whyisjake.github.io/socialrestraint.club",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "bootstrap": "^4.0.0",
     "eslint-config-react-app": "^2.1.0",
     "fb": "^2.0.0",
+    "gh-pages": "^3.2.3",
     "moment": "^2.22.0",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
@@ -16,6 +18,8 @@
     "reactstrap": "^5.0.0-beta.3"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
