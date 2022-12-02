@@ -11,6 +11,7 @@ export default class User extends React.Component {
       {
         method: "share",
         href: document.location.href,
+        display: "popup",
         hashtag: "#socialrestraint",
         quote: `I, ${
           this.props.name

@@ -25,7 +25,7 @@ export default class Footer extends React.Component {
               <i className="fa fa-envelope-o fa-3x mb-3 sr-contact" />
               <p>
                 <a href="mailto:your-email@your-domain.com">
-                  feedback@startbootstrap.com
+                  jacob.spurlock@usc.edu
                 </a>
               </p>
             </div>
