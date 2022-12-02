@@ -53,13 +53,13 @@ export default class User extends React.Component {
             </div>
             <div className="row" style={{ marginTop: "20px" }}>
               <div className="col-8 offset-2">
-                <button
+                <a
                   className="btn btn-light btn-block btn-lg js-scroll-trigger"
                   onClick={this.postMessage}
                   target="_top"
                 >
                   Share
-                </button>
+                </a>
               </div>
             </div>
           </div>
