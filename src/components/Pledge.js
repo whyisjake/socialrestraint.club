@@ -146,6 +146,7 @@ export default class Pledge extends React.Component {
                 <Button
                   className="btn btn-light btn-lg js-scroll-trigger"
                   id="loginButton"
+                  target="_top"
                   onClick={() => this.checkLoginState(true)}
                 >
                   Join the Club
