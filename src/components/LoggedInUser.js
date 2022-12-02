@@ -56,6 +56,7 @@ export default class User extends React.Component {
                 <button
                   className="btn btn-light btn-block btn-lg js-scroll-trigger"
                   onClick={this.postMessage}
+                  target="_top"
                 >
                   Share
                 </button>
